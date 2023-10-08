@@ -8,10 +8,9 @@ form.addEventListener("input", throttle(handlerFeedback, 500));
 
 function handlerFeedback(evt) {
     const feedback = {
-        email: evt.target.elements.email.value,
-        message: evt.target.elements.message.value,
+        email: evt.target.form.email.value,
+        message: evt.target.form.message.value,
     };
-    console.log(evt.target);
 
     localStorage.setItem("feedback-form-state", JSON.stringify(feedback));
 
