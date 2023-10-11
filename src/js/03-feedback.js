@@ -9,7 +9,7 @@ const feedback = {};
 
 function handlerFeedback(evt) {
     
-      feedback.email = evt.target.form.email.value,
+     feedback.email = evt.target.form.email.value,
      feedback.message = evt.target.form.message.value,
     
 
@@ -24,10 +24,10 @@ if (localStorage.getItem("feedback-form-state") != null) {
 form.elements.message.value = storageFeedback.message ?? ""; 
 }
 
-
 form.addEventListener("submit", (evt) => {
-    evt.preventDefault();
-    console.log(evt.target.elements.email);
+  evt.preventDefault();
+  const date = { email: evt.currentTarget.elements.email.value, message: evt.currentTarget.elements.message.value }
+    console.log(date);
   localStorage.removeItem("feedback-form-state");
   form.reset();
 });
