@@ -27,7 +27,7 @@ form.elements.message.value = storageFeedback.message ?? "";
 
 form.addEventListener("submit", (evt) => {
     evt.preventDefault();
-    console.log(feedback);
+    console.log(evt.target);
   localStorage.removeItem("feedback-form-state");
   form.reset();
 });
